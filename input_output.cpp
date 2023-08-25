@@ -1,19 +1,15 @@
+#include <stdio.h>
+#include "input_output.h"
+
+
 int Input_coefficients(double* array_input)
 {
-    double a = NAN, b = NAN, c = NAN;
     printf("Input coefficients of square equation ax^2 + bx + c = 0\n");
-    scanf("%lg %lg %lg", a, b, c);
-    for(int i = 0; i < 3; i++)
-    {
-        printf("%g" array_input[i]);
-    }
-    array_input[0] = a;
-    array_input[1] = b;
-    array_input[2] = c;
-    for(int i = 0; i < 3; i++)
-    {
-        printf("%g" array_input[i]);
-    }
+
+    scanf("%lg %lg %lg", &array_input[0], &array_input[1], &array_input[2]);
+    printf("entered coefficients:\n");
+    printf("%lg %lg %lg\n", array_input[0], array_input[1], array_input[2]);
+    return 0;
 }
 
 void Output_roots(int n_roots, double root_1, double root_2)

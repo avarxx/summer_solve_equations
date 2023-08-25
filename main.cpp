@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <math.h>
-#include <complex.h>
 #include <stdbool.h>
-#include "Solve_equations.h"
-
+#include "Solution_of_the_equation.h"
+#include "input_output.h"
 
 int main()
 {
-    double array_input[len_array_data] = {0, 0, 0};
+    double array_input[3] = {0, 0, 0};
+
     int err = Input_coefficients(array_input);
     /*
     if (err < 0)
