@@ -8,6 +8,8 @@ enum solutions
     Two_solutions,
     Infinity = -1
 };
+const int len_array_input = 3;
+
 
 
 int Input_coefficients(double* array_input);
