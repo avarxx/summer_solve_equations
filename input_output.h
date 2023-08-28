@@ -8,13 +8,17 @@ enum solutions
     Two_solutions,
     Infinity = -1
 };
+enum check
+{
+    Error,
+    Continue
+};
+
 const int len_array_input = 3;
 
+int Input_coefficients(double* array_input, bool &check);
 
-
-int Input_coefficients(double* array_input);
-
-void Output_roots(int n_roots, double root_1, double root_2);
+void Output_roots(int n_roots, double root_1, double root_2, bool check);
 
 
 #endif // INPUT_OUTPUT_H_INCLUDED
