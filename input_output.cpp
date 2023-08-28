@@ -13,28 +13,27 @@ int Input_coefficients(double* array_input, bool &check)
         if (check_ == 0)
         {
             check = false;
-            return -1;
+            return err;
         }
     }
-    printf("entered coefficients:\n");
+    printf("entered coefficients: ");
     if (check == true)
     {
         printf("%lg %lg %lg\n", array_input[0], array_input[1], array_input[2]);
     }
 
-    return 0;
+    return no_err;
 }
-int print_error(int err)
+int print_error(int a)
 {
-    if (err < 0)
+    if (err)
     {
         printf("incorrect input enter the coefficients again\n");
     }
+
 }
 void Output_roots(int n_roots, double root_1, double root_2, bool check)
 {
-    if (check)
-    {
     switch(n_roots)
     {
         case Zero_roots:
@@ -52,7 +51,4 @@ void Output_roots(int n_roots, double root_1, double root_2, bool check)
         default:
             printf("main(): ERROR: = %d\n", n_roots);
     }
-    }
-    else
-        printf("error");
 }

@@ -9,7 +9,7 @@ int Solve_equations(double* array_input,
 {
     if (array_input == NULL)
     {
-        return EINVAL;
+        return -EINVAL;
     }
     if ((is_equal(array_input[0], 0)) == EQUAL)
     {

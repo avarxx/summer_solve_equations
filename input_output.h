@@ -8,10 +8,11 @@ enum solutions
     Two_solutions,
     Infinity = -1
 };
+
 enum check
 {
-    Error,
-    Continue
+    err = -1,
+    no_err = 0
 };
 
 const int len_array_input = 3;
