@@ -6,33 +6,31 @@
 int Input_coefficients(double* array_input, bool &check)
 {
     printf("Input coefficients of square equation ax^2 + bx + c = 0\n");
-    /*
-    scanf("%lg %lg %lg", &array_input[0], &array_input[1], &array_input[2]);
-    */
     for(int i = 0; i < len_array_input; i++)
     {
         int check_ = 0;
         check_ = scanf("%lg", &array_input[i]);
         if (check_ == 0)
         {
-            printf("error\n");
             check = false;
+            return -1;
         }
-        else
-            printf("ok\n");
     }
     printf("entered coefficients:\n");
     if (check == true)
     {
         printf("%lg %lg %lg\n", array_input[0], array_input[1], array_input[2]);
     }
-    else
+
+    return 0;
+}
+int print_error(int err)
+{
+    if (err < 0)
     {
         printf("incorrect input enter the coefficients again\n");
     }
-    return 0;
 }
-
 void Output_roots(int n_roots, double root_1, double root_2, bool check)
 {
     if (check)

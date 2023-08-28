@@ -13,8 +13,13 @@ int main()
 
     double array_input[len_array_data] = {NAN, NAN, NAN};
 
-    Input_coefficients(array_input, check);
-
+    int err = Input_coefficients(array_input, check);
+    printf("%d\n", err);
+    if (err < 0)
+    {
+        print_error(err);
+        return err;
+    }
     double root_1 = NAN, root_2 = NAN;
 
     int n_roots = 0;

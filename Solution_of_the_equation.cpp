@@ -4,22 +4,26 @@
 #include "Solution_of_the_equation.h"
 
 
-void Solve_equations(double* array_input,
+int Solve_equations(double* array_input,
                      double *root_1, double *root_2, int *n_roots)
 {
+    if (array_input == NULL)
+    {
+        return EINVAL;
+    }
     if ((is_equal(array_input[0], 0)) == EQUAL)
     {
         Solve_linear_equations(array_input, root_1, n_roots);
-        return;
+        return 1;
     }
     else
     {
         Solve_square_equations(array_input, root_1, root_2, n_roots);
-        return;
+        return 1;
     }
 }
 
-void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
+static void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
 {
     printf("solves the linear equation\n");
     if ((is_equal(array_input[1], 0) == EQUAL))
@@ -42,7 +46,7 @@ void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
         return;
     }
 }
-void Solve_square_equations(double* array_input, double *root_1, double *root_2, int *n_roots)
+static void Solve_square_equations(double* array_input, double *root_1, double *root_2, int *n_roots)
 {
     printf("solves the quadratic equation\n");
     double discriminant = (((array_input[1] * array_input[1]) - (4 * array_input[0] * array_input[2])));
