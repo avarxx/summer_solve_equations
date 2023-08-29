@@ -21,7 +21,7 @@ void Test(Test_data_ref* all_data)
     int nRoots = 0;
 
     Solve_equations(all_data->coeffs.array_inp,  &x1, &x2, &nRoots);
-    if (x_1 != all_data->roots.ref_root_1 || x_2 != all_data->roots.ref_root_2 || nRoots != all_data->n_roots)
+    if (x1 != all_data->roots.ref_root_1 || x2 != all_data->roots.ref_root_2 || nRoots != all_data->n_roots)
     {
         printf("FALLED: ");
         printf("%lg %lg %d", x_1, x_2, nRoots);
@@ -30,7 +30,7 @@ void Test(Test_data_ref* all_data)
     }
     else
     {
-        printf("Ok");
+        printf("Ok\n");
     }
 }
 
@@ -38,6 +38,7 @@ void Tests()
 {
     for(int i = 0; i < n_test; i++)
     {
+        printf("Test %d :", i);
         Test(&all_data[i]);
     }
 }

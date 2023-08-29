@@ -36,16 +36,16 @@ void Output_roots(int n_roots, double root_1, double root_2, bool check)
     switch(n_roots)
     {
         case Zero_roots:
-            printf("No solutions");
+            printf("No solutions\n");
             break;
         case One_solutions:
-            printf("One root = %lg" , root_1);
+            printf("One root = %lg\n" , root_1);
             break;
         case Two_solutions:
-            printf("The first root = %lg , second root = %lg", root_1, root_2);
+            printf("The first root = %lg , second root = %lg\n", root_1, root_2);
             break;
         case Infinity:
-            printf("infinite number of solutions");
+            printf("infinite number of solutions\n");
             break;
         default:
             printf("main(): ERROR: = %d\n", n_roots);

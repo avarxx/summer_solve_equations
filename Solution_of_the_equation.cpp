@@ -25,7 +25,7 @@ int Solve_equations(double* array_input,
 
 void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
 {
-    printf("solves the linear equation\n");
+//    printf("solves the linear equation\n");
     if ((is_equal(array_input[1], 0) == EQUAL))
     {
         if ((is_equal(array_input[2], 0)) == EQUAL)
@@ -48,7 +48,7 @@ void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
 }
 void Solve_square_equations(double* array_input, double *root_1, double *root_2, int *n_roots)
 {
-    printf("solves the quadratic equation\n");
+//    printf("solves the quadratic equation\n");
     double discriminant = (((array_input[1] * array_input[1]) - (4 * array_input[0] * array_input[2])));
     if (Comparison_doubles(discriminant, 0) > 0 )
     {
