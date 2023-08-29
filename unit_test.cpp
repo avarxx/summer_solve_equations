@@ -16,7 +16,6 @@ struct Test_data_ref all_data[2] =
 
 void Test(Test_data_ref* all_data)
 {
-    double x_1 = NAN, x_2 = NAN;
     double x1 = 0, x2 = 0;
     int nRoots = 0;
 
@@ -24,7 +23,7 @@ void Test(Test_data_ref* all_data)
     if (x1 != all_data->roots.ref_root_1 || x2 != all_data->roots.ref_root_2 || nRoots != all_data->n_roots)
     {
         printf("FALLED: ");
-        printf("%lg %lg %d", x_1, x_2, nRoots);
+        printf("%lg %lg %d", x1, x2, nRoots);
         printf("Expected: ");
         printf("%lg %lg %d",all_data->roots.ref_root_1, all_data->roots.ref_root_2, all_data->n_roots);
     }
@@ -38,7 +37,7 @@ void Tests()
 {
     for(int i = 0; i < n_test; i++)
     {
-        printf("Test %d :", i);
+        printf("Test %d : ", i);
         Test(&all_data[i]);
     }
 }
