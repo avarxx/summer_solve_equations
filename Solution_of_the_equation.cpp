@@ -69,7 +69,7 @@ void Solve_square_equations(double* array_input, double *root_1, double *root_2,
         return;
     }
 }
-const double eps = 0.000000001;
+const double eps = 0.00001;
 /*
     TODO MAKE STATIC AND READ ABOUT IT IN THE KERNIGAN
 */

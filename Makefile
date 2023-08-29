@@ -11,3 +11,4 @@ g++ -c soSolution_of_the_equationlve.cpp
 
 main.o: main.cpp
 g++ -c main.cpp
+

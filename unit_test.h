@@ -1,7 +1,7 @@
 #ifndef UNIT_TEST_H_INCLUDED
 #define UNIT_TEST_H_INCLUDED
 
-const int n_test = 2;
+const int n_test = 11;
 const int n_name = 10;
 
 
