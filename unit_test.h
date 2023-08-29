@@ -1,6 +1,6 @@
 #ifndef UNIT_TEST_H_INCLUDED
 #define UNIT_TEST_H_INCLUDED
-#include "enum.h"
+
 const int n_test = 2;
 const int n_name = 10;
 

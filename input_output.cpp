@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "input_output.h"
+#include "Solution_of_the_equation.h"
 #include <cctype>
-#include "enum.h"
+
 
 int Input_coefficients(double* array_input, bool &check)
 {

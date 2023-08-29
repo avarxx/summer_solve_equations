@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include "Solution_of_the_equation.h"
 #include "unit_test.h"
-#include "enum.h"
+
 /*
     TODO: const
 */

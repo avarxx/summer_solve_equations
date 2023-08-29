@@ -10,6 +10,14 @@ enum
     NO_EQUAL
 };
 
+enum solutions
+{
+    Zero_roots,
+    One_solutions,
+    Two_solutions,
+    Infinity = -1
+};
+
 int Solve_equations(double* array_input,
                      double *root_1, double *root_2, int *n_roots);
 
