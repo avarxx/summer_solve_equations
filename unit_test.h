@@ -1,34 +1,32 @@
 #ifndef UNIT_TEST_H_INCLUDED
 #define UNIT_TEST_H_INCLUDED
-
+#include "enum.h"
 const int n_test = 2;
 const int n_name = 10;
 
+
 struct Coeffs {
-    double a;
-    double b;
-    double c;
+    double array_inp[3];
 };
 
 struct Roots {
-    double x1;
-    double x2;
+    double ref_root_1;
+    double ref_root_2;
 };
 
-struct TestData {
+struct Test_data_ref{
     struct Coeffs coeffs;
     struct Roots roots;
-    enum solutions nroots;
+    enum solutions n_roots;
 };
 
-struct Test_data_ref
-{
-    double array_inp[3] = {0, 0, 0};
-    double ref_root_1, ref_root_2;
-    int n_roots = 0;
-};
-struct Test_data_ref all_data[n_test] = {{{0, 0, 0}, 0, 0, -1},
-                                        {{1, 0, -4}, 2, -2, 2}};
 
-int Solution_of_the_equation(struct Test_data_ref* all_data,  double &x_1, double &x_2, double &nRoots);
+
+
+void Test(const Test_data_ref* all_data);
+
+void Tests();
+
+int Solve_equations(double* array_input,
+                     double *root_1, double *root_2, int *n_roots);
 #endif // UNIT_TEST_H_INCLUDED

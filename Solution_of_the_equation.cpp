@@ -23,7 +23,7 @@ int Solve_equations(double* array_input,
     }
 }
 
-static void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
+void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
 {
     printf("solves the linear equation\n");
     if ((is_equal(array_input[1], 0) == EQUAL))
@@ -46,7 +46,7 @@ static void Solve_linear_equations(double* array_input, double *root_1, int *n_r
         return;
     }
 }
-static void Solve_square_equations(double* array_input, double *root_1, double *root_2, int *n_roots)
+void Solve_square_equations(double* array_input, double *root_1, double *root_2, int *n_roots)
 {
     printf("solves the quadratic equation\n");
     double discriminant = (((array_input[1] * array_input[1]) - (4 * array_input[0] * array_input[2])));
@@ -74,7 +74,7 @@ const double eps = 0.000000001;
     TODO MAKE STATIC AND READ ABOUT IT IN THE KERNIGAN
 */
 
-static double Comparison_doubles(double first, double second)
+double Comparison_doubles(double first, double second)
 {
     if ((first - second) > eps)
     {
@@ -88,7 +88,7 @@ static double Comparison_doubles(double first, double second)
     }
     return 0;
 }
-static is_equal(double first, double second)
+int is_equal(double first, double second)
 {
     if (first - second > eps)
         return NO_EQUAL;

@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "Solution_of_the_equation.h"
 #include "input_output.h"
+#include "unit_test.h"
 
 
 int main()
@@ -18,6 +19,7 @@ int main()
     if (err < 0)
     {
         print_error(err);
+
         return err;
     }
     double root_1 = NAN, root_2 = NAN;
@@ -32,6 +34,8 @@ int main()
     }
 
     Output_roots(n_roots, root_1, root_2, check);
+
+    Tests();
 
     return 0;
 }

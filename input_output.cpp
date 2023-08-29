@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include "input_output.h"
 #include <cctype>
+#include "enum.h"
 
 int Input_coefficients(double* array_input, bool &check)
 {
@@ -21,7 +22,6 @@ int Input_coefficients(double* array_input, bool &check)
     {
         printf("%lg %lg %lg\n", array_input[0], array_input[1], array_input[2]);
     }
-
     return no_err;
 }
 int print_error(int a)
@@ -30,7 +30,6 @@ int print_error(int a)
     {
         printf("incorrect input enter the coefficients again\n");
     }
-
 }
 void Output_roots(int n_roots, double root_1, double root_2, bool check)
 {
