@@ -23,7 +23,7 @@ struct Test_data_ref{
 
 
 
-void Test(const Test_data_ref* all_data, int i);
+void Test(const Test_data_ref* all_data, int i, FILE* file);
 
 void Tests();
 

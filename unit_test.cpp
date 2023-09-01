@@ -27,9 +27,9 @@ struct Test_data_ref all_data[n_test] =
 
                 };
 
-void Test(Test_data_ref* all_data, int i)
+void Test(Test_data_ref* all_data, int i, FILE* file)
 {
-    FILE *file = fopen("test_solutions.txt", "a");
+
     // TODO assert all_data != NULL
     //assert(all_data);
     // TODO
@@ -59,13 +59,14 @@ void Test(Test_data_ref* all_data, int i)
 */
 void Tests()
 {
-    FILE *file = fopen("test_solutions.txt", "w");
+    FILE *file;
+    file = fopen("test_solutions.txt", "w");
     // TODO check for NULL
 
     for(int i = 0; i < n_test; i++)
     {
-        fprintf(file, "Test %d : ", i + 1);
-        Test(&all_data[i], i + 1);
+        //fprintf(file, "Test %d : ", i + 1, &file);
+        Test(&all_data[i], i, file);
     }
     fclose(file);
 }
