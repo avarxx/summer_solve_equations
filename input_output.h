@@ -3,7 +3,7 @@
 
 
 enum check
-{ // TODO UPPER CASEs
+{
     err = -1,
     no_err = 0
 };

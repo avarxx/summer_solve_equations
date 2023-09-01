@@ -1,0 +1,115 @@
+\doxysection{Solution\+\_\+of\+\_\+the\+\_\+equation.\+h File Reference}
+\hypertarget{_solution__of__the__equation_8h}{}\label{_solution__of__the__equation_8h}\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{_solution__of__the__equation_8h_a06fc87d81c62e9abb8790b6e5713c55ba7bfd237190819a0a272db7b0aa61d5c8}{EINVAL}}
+ \}
+\item 
+enum \{ \mbox{\hyperlink{_solution__of__the__equation_8h_adf764cbdea00d65edcd07bb9953ad2b7a59a84258a4cb9025b567ee5139455029}{EQUAL}}
+, \mbox{\hyperlink{_solution__of__the__equation_8h_adf764cbdea00d65edcd07bb9953ad2b7a53d4924b56d4cd6a5ef1813febdd3bbe}{NO\+\_\+\+EQUAL}}
+ \}
+\item 
+enum \mbox{\hyperlink{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979}{solutions}} \{ \mbox{\hyperlink{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979a8875fcd0299af630402385dfd91255e6}{Zero\+\_\+roots}}
+, \mbox{\hyperlink{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979acf608843c07fe13493ad75bdc81973ac}{One\+\_\+solutions}}
+, \mbox{\hyperlink{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979ad09d1dc59e1470513c042c52266d1354}{Two\+\_\+solutions}}
+, \mbox{\hyperlink{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979aa9b91d05d6780a67093e34598646f7e3}{Infinity}} = -\/1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_solution__of__the__equation_8h_a747e320e2d19f9026b2ec137cdba054d}{Solve\+\_\+equations}} (double \texorpdfstring{$\ast$}{*}array\+\_\+input, double \texorpdfstring{$\ast$}{*}root\+\_\+1, double \texorpdfstring{$\ast$}{*}root\+\_\+2, int \texorpdfstring{$\ast$}{*}n\+\_\+roots)
+\item 
+void \mbox{\hyperlink{_solution__of__the__equation_8h_a75c847b866d3a6b940cc91ccef5e65a2}{Solve\+\_\+linear\+\_\+equations}} (double \texorpdfstring{$\ast$}{*}array\+\_\+input, double \texorpdfstring{$\ast$}{*}root\+\_\+1, int \texorpdfstring{$\ast$}{*}n\+\_\+roots)
+\item 
+void \mbox{\hyperlink{_solution__of__the__equation_8h_a784b8991e58db9c2ffe19dbe9e65f73a}{Solve\+\_\+square\+\_\+equations}} (double \texorpdfstring{$\ast$}{*}array\+\_\+input, double \texorpdfstring{$\ast$}{*}root\+\_\+1, double \texorpdfstring{$\ast$}{*}root\+\_\+2, int \texorpdfstring{$\ast$}{*}n\+\_\+roots)
+\item 
+double \mbox{\hyperlink{_solution__of__the__equation_8h_aa11a96d1e0574ac0377547f45e95645d}{Comparison\+\_\+doubles}} (double first, double second)
+\item 
+int \mbox{\hyperlink{_solution__of__the__equation_8h_a8e6ed9e5f62ea4868c68580aee0a4106}{is\+\_\+equal}} (double first, double second)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_solution__of__the__equation_8h_a06fc87d81c62e9abb8790b6e5713c55b}\label{_solution__of__the__equation_8h_a06fc87d81c62e9abb8790b6e5713c55b} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EINVAL@{EINVAL}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!EINVAL@{EINVAL}}}\Hypertarget{_solution__of__the__equation_8h_a06fc87d81c62e9abb8790b6e5713c55ba7bfd237190819a0a272db7b0aa61d5c8}\label{_solution__of__the__equation_8h_a06fc87d81c62e9abb8790b6e5713c55ba7bfd237190819a0a272db7b0aa61d5c8} 
+EINVAL&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_solution__of__the__equation_8h_adf764cbdea00d65edcd07bb9953ad2b7}\label{_solution__of__the__equation_8h_adf764cbdea00d65edcd07bb9953ad2b7} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EQUAL@{EQUAL}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!EQUAL@{EQUAL}}}\Hypertarget{_solution__of__the__equation_8h_adf764cbdea00d65edcd07bb9953ad2b7a59a84258a4cb9025b567ee5139455029}\label{_solution__of__the__equation_8h_adf764cbdea00d65edcd07bb9953ad2b7a59a84258a4cb9025b567ee5139455029} 
+EQUAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_EQUAL@{NO\_EQUAL}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!NO\_EQUAL@{NO\_EQUAL}}}\Hypertarget{_solution__of__the__equation_8h_adf764cbdea00d65edcd07bb9953ad2b7a53d4924b56d4cd6a5ef1813febdd3bbe}\label{_solution__of__the__equation_8h_adf764cbdea00d65edcd07bb9953ad2b7a53d4924b56d4cd6a5ef1813febdd3bbe} 
+NO\+\_\+\+EQUAL&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979}\label{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979} 
+\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!solutions@{solutions}}
+\index{solutions@{solutions}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}
+\doxysubsubsection{\texorpdfstring{solutions}{solutions}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979}{solutions}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Zero\_roots@{Zero\_roots}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!Zero\_roots@{Zero\_roots}}}\Hypertarget{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979a8875fcd0299af630402385dfd91255e6}\label{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979a8875fcd0299af630402385dfd91255e6} 
+Zero\+\_\+roots&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{One\_solutions@{One\_solutions}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!One\_solutions@{One\_solutions}}}\Hypertarget{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979acf608843c07fe13493ad75bdc81973ac}\label{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979acf608843c07fe13493ad75bdc81973ac} 
+One\+\_\+solutions&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Two\_solutions@{Two\_solutions}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!Two\_solutions@{Two\_solutions}}}\Hypertarget{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979ad09d1dc59e1470513c042c52266d1354}\label{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979ad09d1dc59e1470513c042c52266d1354} 
+Two\+\_\+solutions&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Infinity@{Infinity}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!Infinity@{Infinity}}}\Hypertarget{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979aa9b91d05d6780a67093e34598646f7e3}\label{_solution__of__the__equation_8h_a97be9d71c3998b7a3a97e9403e375979aa9b91d05d6780a67093e34598646f7e3} 
+Infinity&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_solution__of__the__equation_8h_aa11a96d1e0574ac0377547f45e95645d}\label{_solution__of__the__equation_8h_aa11a96d1e0574ac0377547f45e95645d} 
+\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!Comparison\_doubles@{Comparison\_doubles}}
+\index{Comparison\_doubles@{Comparison\_doubles}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}
+\doxysubsubsection{\texorpdfstring{Comparison\_doubles()}{Comparison\_doubles()}}
+{\footnotesize\ttfamily double Comparison\+\_\+doubles (\begin{DoxyParamCaption}\item[{double}]{first,  }\item[{double}]{second }\end{DoxyParamCaption})}
+
+\Hypertarget{_solution__of__the__equation_8h_a8e6ed9e5f62ea4868c68580aee0a4106}\label{_solution__of__the__equation_8h_a8e6ed9e5f62ea4868c68580aee0a4106} 
+\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!is\_equal@{is\_equal}}
+\index{is\_equal@{is\_equal}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}
+\doxysubsubsection{\texorpdfstring{is\_equal()}{is\_equal()}}
+{\footnotesize\ttfamily int is\+\_\+equal (\begin{DoxyParamCaption}\item[{double}]{first,  }\item[{double}]{second }\end{DoxyParamCaption})}
+
+\Hypertarget{_solution__of__the__equation_8h_a747e320e2d19f9026b2ec137cdba054d}\label{_solution__of__the__equation_8h_a747e320e2d19f9026b2ec137cdba054d} 
+\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!Solve\_equations@{Solve\_equations}}
+\index{Solve\_equations@{Solve\_equations}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}
+\doxysubsubsection{\texorpdfstring{Solve\_equations()}{Solve\_equations()}}
+{\footnotesize\ttfamily int Solve\+\_\+equations (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{array\+\_\+input,  }\item[{double \texorpdfstring{$\ast$}{*}}]{root\+\_\+1,  }\item[{double \texorpdfstring{$\ast$}{*}}]{root\+\_\+2,  }\item[{int \texorpdfstring{$\ast$}{*}}]{n\+\_\+roots }\end{DoxyParamCaption})}
+
+\Hypertarget{_solution__of__the__equation_8h_a75c847b866d3a6b940cc91ccef5e65a2}\label{_solution__of__the__equation_8h_a75c847b866d3a6b940cc91ccef5e65a2} 
+\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!Solve\_linear\_equations@{Solve\_linear\_equations}}
+\index{Solve\_linear\_equations@{Solve\_linear\_equations}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}
+\doxysubsubsection{\texorpdfstring{Solve\_linear\_equations()}{Solve\_linear\_equations()}}
+{\footnotesize\ttfamily void Solve\+\_\+linear\+\_\+equations (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{array\+\_\+input,  }\item[{double \texorpdfstring{$\ast$}{*}}]{root\+\_\+1,  }\item[{int \texorpdfstring{$\ast$}{*}}]{n\+\_\+roots }\end{DoxyParamCaption})}
+
+\Hypertarget{_solution__of__the__equation_8h_a784b8991e58db9c2ffe19dbe9e65f73a}\label{_solution__of__the__equation_8h_a784b8991e58db9c2ffe19dbe9e65f73a} 
+\index{Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}!Solve\_square\_equations@{Solve\_square\_equations}}
+\index{Solve\_square\_equations@{Solve\_square\_equations}!Solution\_of\_the\_equation.h@{Solution\_of\_the\_equation.h}}
+\doxysubsubsection{\texorpdfstring{Solve\_square\_equations()}{Solve\_square\_equations()}}
+{\footnotesize\ttfamily void Solve\+\_\+square\+\_\+equations (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{array\+\_\+input,  }\item[{double \texorpdfstring{$\ast$}{*}}]{root\+\_\+1,  }\item[{double \texorpdfstring{$\ast$}{*}}]{root\+\_\+2,  }\item[{int \texorpdfstring{$\ast$}{*}}]{n\+\_\+roots }\end{DoxyParamCaption})}
+

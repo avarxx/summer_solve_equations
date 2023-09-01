@@ -4,7 +4,11 @@
 #include "input_output.h"
 #include "Solution_of_the_equation.h"
 #include <cctype>
-
+/// @brief coefficient input function
+/// @param[in] array_input the specified array initialized with zeros
+/// @param check
+/// @return returns an array with coefficients or an error code
+///\code
 int Input_coefficients(double* array_input, bool &check)
 {
     printf("Input coefficients of square equation ax^2 + bx + c = 0\n");
@@ -28,7 +32,11 @@ int Input_coefficients(double* array_input, bool &check)
 
     return no_err;
 }
-
+///\endcode
+/// @brief error output function
+/// @param a
+/// @return
+///\code
 int print_error(int a)
 {
     if (err)
@@ -36,7 +44,13 @@ int print_error(int a)
         printf("incorrect input enter the coefficients again\n");
     }
 }
-
+///\code
+/// @brief error output function
+/// @param n_roots
+/// @param root_1
+/// @param root_2
+/// @param check
+///\code
 void Output_roots(int n_roots, double root_1, double root_2, bool check)
 {
     FILE *file = fopen("solutions.txt", "w");
@@ -60,3 +74,4 @@ void Output_roots(int n_roots, double root_1, double root_2, bool check)
     }
     fclose(file);
 }
+///\endcode

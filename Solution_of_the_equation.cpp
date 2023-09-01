@@ -3,7 +3,12 @@
 #include <stdbool.h>
 #include "Solution_of_the_equation.h"
 
-
+/// @brief the function of solving the quadratic equation
+/// @param array_input array of coefficients
+/// @param root_1 the first root
+/// @param root_2 the second root
+/// @param n_roots number of roots
+///\code
 int Solve_equations(double* array_input,
                      double *root_1, double *root_2, int *n_roots)
 {
@@ -22,10 +27,14 @@ int Solve_equations(double* array_input,
         return 1;
     }
 }
-
+///\endcode
+/// @brief solving a linear equation
+/// @param array_input array of coefficients
+/// @param root_1 roots
+/// @param n_roots number of roots
+///\code
 void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
 {
-//    printf("solves the linear equation\n");
     if ((is_equal(array_input[1], 0) == EQUAL))
     {
         if ((is_equal(array_input[2], 0)) == EQUAL)
@@ -46,9 +55,15 @@ void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
         return;
     }
 }
+///\endcode
+/// @brief solving the quadratic equation
+/// @param array_input array of coefficients
+/// @param root_1 the first root
+/// @param root_2 the second root
+/// @param n_roots number of roots
+///\code
 void Solve_square_equations(double* array_input, double *root_1, double *root_2, int *n_roots)
 {
-//    printf("solves the quadratic equation\n");
     double discriminant = (((array_input[1] * array_input[1]) - (4 * array_input[0] * array_input[2])));
     if (Comparison_doubles(discriminant, 0) > 0 )
     {
@@ -69,10 +84,14 @@ void Solve_square_equations(double* array_input, double *root_1, double *root_2,
         return;
     }
 }
+///\endcode
+
+/// @brief double comparison function
+/// @param first
+/// @param second
+/// @return returns true or false
+///\code
 const double eps = 0.00001;
-/*
-    TODO MAKE STATIC AND READ ABOUT IT IN THE KERNIGAN
-*/
 
 double Comparison_doubles(double first, double second)
 {
@@ -88,6 +107,12 @@ double Comparison_doubles(double first, double second)
     }
     return 0;
 }
+///\endcode
+/// @brief equality comparison function
+/// @param first
+/// @param second
+/// @return
+///\code
 int is_equal(double first, double second)
 {
     if (first - second > eps)
@@ -97,5 +122,5 @@ int is_equal(double first, double second)
     else
         return EQUAL;
 }
-
+///\code
 

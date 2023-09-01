@@ -1,11 +1,12 @@
 #ifndef UNIT_TEST_H_INCLUDED
 #define UNIT_TEST_H_INCLUDED
 
-const int n_test = 11; // TODO all consts are UPPER CASE
+const int n_test = 11;
 const int n_name = 10;
 
 
-struct Coeffs { // TODO a b c
+struct Coeffs
+{
     double array_inp[3];
 };
 

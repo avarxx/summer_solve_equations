@@ -5,7 +5,10 @@
 #include "input_output.h"
 #include "unit_test.h"
 
-
+/// @brief launching functions
+/// @param argc
+/// @param argv
+///\code
 int main(int argc, char** argv)
 {
     if (argc > 1)
@@ -43,3 +46,4 @@ int main(int argc, char** argv)
     }
     return 0;
 }
+///\endcode

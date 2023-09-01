@@ -6,10 +6,7 @@
 #include "unit_test.h"
 #include <assert.h>
 
-/*
-    TODO: const
-*/
-
+/// @brief an array of structures in which data for tests is stored
 struct Test_data_ref all_data[n_test] =
                 {
                     {{0, 0, 0}, 0, 0, Infinity},
@@ -27,14 +24,15 @@ struct Test_data_ref all_data[n_test] =
 
                 };
 
+/// @brief the function that tests the program
+/// @param all_data data structure
+/// @param i counter
+/// @param file test_solutions.txt the file in which the test results are recorded
+///\code
 void Test(Test_data_ref* all_data, int i, FILE* file)
 {
-
-    // TODO assert all_data != NULL
-    //assert(all_data);
-    // TODO
-    // TODO check file != NULL
-    //assert(file);
+    assert(all_data);
+    assert(file);
     double x1 = NAN, x2 = NAN;
     int nRoots = 0;
 
@@ -54,9 +52,12 @@ void Test(Test_data_ref* all_data, int i, FILE* file)
     }
 
 }
+///\endcode
 
-/*printf(file, "Ok, /*the equation %lgx^2+%lgx+%lg = 0 roots: x1 = %lg, x2 = %lg\n",all_data->coeffs.array_inp[0], all_data->coeffs.array_inp[1], all_data->coeffs.array_inp[2], x1, x2);
-*/
+///\code
+/// @brief a function that calls the output of tests
+/// @param i
+/// @param file
 void Tests()
 {
     FILE *file;
@@ -70,3 +71,4 @@ void Tests()
     }
     fclose(file);
 }
+///\endcode
