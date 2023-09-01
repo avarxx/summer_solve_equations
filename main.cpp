@@ -32,9 +32,9 @@ int main(int argc, char** argv)
 
         int n_roots = 0;
 
-        Solve_equations(array_input, &root_1, &root_2, &n_roots);
+        int er = Solve_equations(array_input, &root_1, &root_2, &n_roots);
 
-        if (err < 0)
+        if (er < 0)
         {
             printf("array_input == NULL");
         }

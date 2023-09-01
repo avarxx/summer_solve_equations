@@ -64,8 +64,8 @@ void Tests()
 
     for(int i = 0; i < n_test; i++)
     {
-//        fprintf(file, "Test %d : ", i + 1);
-        Test(&all_data[i], i);
+        fprintf(file, "Test %d : ", i + 1);
+        Test(&all_data[i], i + 1);
     }
     fclose(file);
 }

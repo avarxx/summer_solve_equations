@@ -5,7 +5,7 @@
 #include "Solution_of_the_equation.h"
 #include <cctype>
 
-int Input_coefficients(double* array_input, bool check)
+int Input_coefficients(double* array_input, bool &check)
 {
     printf("Input coefficients of square equation ax^2 + bx + c = 0\n");
 
