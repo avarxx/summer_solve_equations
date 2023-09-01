@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include "Solution_of_the_equation.h"
 #include "unit_test.h"
+#include <assert.h>
 
 /*
     TODO: const
@@ -25,30 +27,45 @@ struct Test_data_ref all_data[n_test] =
 
                 };
 
-void Test(Test_data_ref* all_data)
+void Test(Test_data_ref* all_data, int i)
 {
+    FILE *file = fopen("test_solutions.txt", "a");
+    // TODO assert all_data != NULL
+    //assert(all_data);
+    // TODO
+    // TODO check file != NULL
+    //assert(file);
     double x1 = NAN, x2 = NAN;
     int nRoots = 0;
 
     Solve_equations(all_data->coeffs.array_inp,  &x1, &x2, &nRoots);
     if (is_equal(x1, all_data->roots.ref_root_1) || is_equal(x2, all_data->roots.ref_root_2) || nRoots != all_data->n_roots)
     {
-        printf("FALLED: ");
-        printf("%lg %lg %d", x1, x2, nRoots);
-        printf("Expected: ");
-        printf("%lg %lg %d",all_data->roots.ref_root_1, all_data->roots.ref_root_2, all_data->n_roots);
+        fprintf(file, "FALLED: ");
+        fprintf(file, "%lg %lg %d", x1, x2, nRoots);
+        fprintf(file, "Expected: ");
+        fprintf(file, "%lg %lg %d",all_data->roots.ref_root_1, all_data->roots.ref_root_2, all_data->n_roots);
     }
     else
     {
-        printf("Ok, the equation %lgx^2+%lgx+%lg = 0 roots: x1 = %lg, x2 = %lg\n",all_data->coeffs.array_inp[0], all_data->coeffs.array_inp[1], all_data->coeffs.array_inp[2], x1, x2);
+        fprintf(file, "Test %d ", i + 1);
+        fprintf(file, "Ok, the equation %lgx^2 + %lgx + %lg = 0 ",all_data->coeffs.array_inp[0], all_data->coeffs.array_inp[1], all_data->coeffs.array_inp[2]);
+        fprintf(file, "number of roots: %d\n", nRoots);
     }
+
 }
 
+/*printf(file, "Ok, /*the equation %lgx^2+%lgx+%lg = 0 roots: x1 = %lg, x2 = %lg\n",all_data->coeffs.array_inp[0], all_data->coeffs.array_inp[1], all_data->coeffs.array_inp[2], x1, x2);
+*/
 void Tests()
 {
+    FILE *file = fopen("test_solutions.txt", "w");
+    // TODO check for NULL
+
     for(int i = 0; i < n_test; i++)
     {
-        printf("Test %d : ", i + 1);
-        Test(&all_data[i]);
+//        fprintf(file, "Test %d : ", i + 1);
+        Test(&all_data[i], i);
     }
+    fclose(file);
 }
