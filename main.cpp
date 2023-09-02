@@ -11,7 +11,6 @@
 /// @param argc
 /// @param argv
 ///\code
-
 int main(int argc, char** argv)
 {
     if (strcmp(argv[1], "--test") == 0)
@@ -40,5 +39,4 @@ int main(int argc, char** argv)
     }
     return 0;
 }
-
 ///\endcode

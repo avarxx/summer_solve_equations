@@ -14,7 +14,7 @@ do                              \
 {                               \
     if (err != NO_ERR)          \
         {                       \
-            PrintError(err);   \
+            PrintError(err);    \
             return err;         \
         }                       \
 }                               \
@@ -29,7 +29,6 @@ int  ScanfCofficients  (double* array_input, int i);
 void OutputRoots       (int n_roots, double root_1, double root_2);
 
 int  PrintError        (int err);
-
 
 
 #endif // INPUT_OUTPUT_H_INCLUDED
