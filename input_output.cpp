@@ -24,9 +24,9 @@ int InputCoefficients(double* array_input)
 /// @param i
 /// @param array_input
 /// @return code errors
-int ScanfCofficients(double* array_input, int i);
+int ScanfCofficients(double* array_input, int i)
 {
-    scnaf("%lg", array_input[i]);
+    scanf("%lg", array_input[i]);
     int count = scanf("%lg", &array_input[i]);
 
     if (count == 0)
@@ -39,13 +39,11 @@ int ScanfCofficients(double* array_input, int i);
         return NO_ERR;
     }
 }
-
 ///\endcode
 /// @brief error output function
 /// @param a
 /// @return
 ///\code
-
 int PrintError(int err)
 {
     switch (err)
