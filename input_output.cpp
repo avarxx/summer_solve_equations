@@ -67,7 +67,7 @@ int PrintError(int err)
 /// @param check
 ///\code
 
-void OutputRoots(int n_roots, double root_1, double root_2, bool check)
+void OutputRoots(int n_roots, double root_1, double root_2)
 {
     switch(n_roots)
     {

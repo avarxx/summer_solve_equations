@@ -11,8 +11,9 @@
 /// @param root_2 the second root
 /// @param n_roots number of roots
 ///\code
+
 int SolveEquations(double* array_input,
-                     double *root_1, double *root_2, int *n_roots)
+                   double *root_1, double *root_2, int *n_roots)
 {
     double a = array_input[0];
 
@@ -76,7 +77,7 @@ void SolveLinearEquations(double* array_input, double *root_1, int *n_roots)
 /// @param n_roots number of roots
 ///\code
 
-void SolveSquarEquations(double* array_input, double *root_1, double *root_2, int *n_roots)
+void SolveSquareEquations(double* array_input, double *root_1, double *root_2, int *n_roots)
 {
     double a = array_input[0];
     double b = array_input[1];
