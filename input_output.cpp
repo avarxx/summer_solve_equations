@@ -26,7 +26,6 @@ int InputCoefficients(double* array_input)
 /// @return code errors
 int ScanfCofficients(double* array_input, int i)
 {
-    scanf("%lg", array_input[i]);
     int count = scanf("%lg", &array_input[i]);
 
     if (count == 0)
@@ -34,10 +33,6 @@ int ScanfCofficients(double* array_input, int i)
         return ERR;
     }
 
-    else
-    {
-        return NO_ERR;
-    }
 }
 ///\endcode
 /// @brief error output function
