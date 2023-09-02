@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>
+
 #include "Solution_of_the_equation.h"
 
 /// @brief the function of solving the quadratic equation
@@ -9,21 +10,22 @@
 /// @param root_2 the second root
 /// @param n_roots number of roots
 ///\code
-int Solve_equations(double* array_input,
+int SolveEquations(double* array_input,
                      double *root_1, double *root_2, int *n_roots)
 {
+    double a = array_input[0];
     if (array_input == NULL)
     {
         return -EINVAL;
     }
-    if ((is_equal(array_input[0], 0)) == EQUAL)
+    if ((IsEqual(a, 0)) == EQUAL)
     {
-        Solve_linear_equations(array_input, root_1, n_roots);
+        SolveLinearEquations(array_input, root_1, n_roots);
         return 1;
     }
     else
     {
-        Solve_square_equations(array_input, root_1, root_2, n_roots);
+        SolveSquareEquations(array_input, root_1, root_2, n_roots);
         return 1;
     }
 }
@@ -33,11 +35,13 @@ int Solve_equations(double* array_input,
 /// @param root_1 roots
 /// @param n_roots number of roots
 ///\code
-void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
+void SolveLinearEquations(double* array_input, double *root_1, int *n_roots)
 {
-    if ((is_equal(array_input[1], 0) == EQUAL))
+    double b = array_input[1];
+    double c = array_input[2];
+    if ((IsEqual(b, 0) == EQUAL))
     {
-        if ((is_equal(array_input[2], 0)) == EQUAL)
+        if ((IsEqual(c, 0)) == EQUAL)
         {
             *n_roots = -1;
             return;
@@ -50,7 +54,7 @@ void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
     }
     else
     {
-        *root_1 = (-(array_input[2])/array_input[1]);
+        *root_1 = (-c / b);
         *n_roots = 1;
         return;
     }
@@ -62,23 +66,27 @@ void Solve_linear_equations(double* array_input, double *root_1, int *n_roots)
 /// @param root_2 the second root
 /// @param n_roots number of roots
 ///\code
-void Solve_square_equations(double* array_input, double *root_1, double *root_2, int *n_roots)
+void SolveSquarEquations(double* array_input, double *root_1, double *root_2, int *n_roots)
 {
-    double discriminant = (((array_input[1] * array_input[1]) - (4 * array_input[0] * array_input[2])));
-    if (Comparison_doubles(discriminant, 0) > 0 )
+    double a = array_input[0];
+    double b = array_input[1];
+    double c = array_input[2];
+
+    double discriminant = (((b * b) - (4 * a * c)));
+    if (ComparisonDoubles(discriminant, 0) > 0 )
     {
-        *root_1 = ((-array_input[1] + sqrt(discriminant))/(2 * array_input[0]));
-        *root_2 = ((-array_input[1] - sqrt(discriminant))/(2 * array_input[0]));
+        *root_1  = ((-b + sqrt(discriminant))/(2 * a));
+        *root_2  = ((-b - sqrt(discriminant))/(2 * a));
         *n_roots = 2;
         return;
     }
-    if (is_equal(discriminant, 0) == EQUAL)
+    if (IsEqual(discriminant, 0) == EQUAL)
     {
-        *root_1 = ((-array_input[1])/(2 * array_input[0]));
+        *root_1  = ((-b)/(2 * a));
         *n_roots = 1;
         return;
     }
-    if (Comparison_doubles(discriminant, 0) < 0)
+    if (ComparisonDoubles(discriminant, 0) < 0)
     {
         *n_roots = 0;
         return;
@@ -93,7 +101,7 @@ void Solve_square_equations(double* array_input, double *root_1, double *root_2,
 ///\code
 const double eps = 0.00001;
 
-double Comparison_doubles(double first, double second)
+double ComparisonDoubles(double first, double second)
 {
     if ((first - second) > eps)
     {
@@ -113,7 +121,7 @@ double Comparison_doubles(double first, double second)
 /// @param second
 /// @return
 ///\code
-int is_equal(double first, double second)
+int IsEqual(double first, double second)
 {
     if (first - second > eps)
         return NO_EQUAL;

@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>
+#include <string.h>
+
 #include "Solution_of_the_equation.h"
 #include "input_output.h"
 #include "unit_test.h"
@@ -11,38 +13,29 @@
 ///\code
 int main(int argc, char** argv)
 {
-    if (argc > 1)
+    if (strcmp(argv[1], "--test") == 0)
     {
-        Tests();
+        RunningAllTests();
     }
     else
     {
         const int len_array_data = 3;
 
-        bool check = true;
-
         double array_input[len_array_data] = {NAN, NAN, NAN};
 
-        int err = Input_coefficients(array_input, check);
+        int err_input = InputCoefficients(array_input);
 
-        if (err < 0)
-        {
-            print_error(err);
+        CHECK_ERR(err_input);
 
-            return err;
-        }
         double root_1 = NAN, root_2 = NAN;
 
         int n_roots = 0;
 
-        int er = Solve_equations(array_input, &root_1, &root_2, &n_roots);
+        int err_sol = SolveEquations(array_input, &root_1, &root_2, &n_roots);
 
-        if (er < 0)
-        {
-            printf("array_input == NULL");
-        }
+        CHECK_ERR(err_sol);
 
-        Output_roots(n_roots, root_1, root_2, check);
+        OutputRoots(n_roots, root_1, root_2);
     }
     return 0;
 }

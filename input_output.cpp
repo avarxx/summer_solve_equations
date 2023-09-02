@@ -1,47 +1,55 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+//#include <cctype>
+
 #include "input_output.h"
 #include "Solution_of_the_equation.h"
-#include <cctype>
+
 /// @brief coefficient input function
 /// @param[in] array_input the specified array initialized with zeros
 /// @param check
 /// @return returns an array with coefficients or an error code
 ///\code
-int Input_coefficients(double* array_input, bool &check)
+int InputCoefficients(double* array_input)
 {
     printf("Input coefficients of square equation ax^2 + bx + c = 0\n");
 
     for(int i = 0; i < len_array_input; i++)
     {
-        int check_ = 0;
-        check_ = scanf("%lg", &array_input[i]);
-        if (check_ == 0)
-        {
-            check = false;
-            return err;
-        }
+        ScanfCofficients(i, array_input[i]);
     }
+}
 
-    printf("entered coefficients: ");
-    if (check == true)
-    {
-        printf("%lg %lg %lg\n", array_input[0], array_input[1], array_input[2]);
-    }
+int ScanfCofficients(int i, double* array_input[i]);
+{
+    scnaf("%lg", array_input[i]);
+    int count = scanf("%lg", &array_input[i]);
+    if (count == 0)
+        return ERR;
+    else
+        return NO_ERR;
 
-    return no_err;
 }
 ///\endcode
 /// @brief error output function
 /// @param a
 /// @return
 ///\code
-int print_error(int a)
+int PrintError(int err)
 {
-    if (err)
+    switch (err)
     {
-        printf("incorrect input enter the coefficients again\n");
+        case NO_ERR:
+            printf("\0");
+            break;
+        case ERR:
+            printf("incorrect input enter the coefficients again\n");
+            break;
+        case -EINVAL:
+            printf("Error");
+            break;
+        // enum ERRRORS {NO_ERR = 0, ..}
     }
 }
 ///\code
@@ -51,22 +59,22 @@ int print_error(int a)
 /// @param root_2
 /// @param check
 ///\code
-void Output_roots(int n_roots, double root_1, double root_2, bool check)
+void OutputRoots(int n_roots, double root_1, double root_2, bool check)
 {
     FILE *file = fopen("solutions.txt", "w");
     switch(n_roots)
     {
-        case Zero_roots:
+        case ZERO_ROOTS:
             fprintf(file, "No solutions\n");
             break;
-        case One_solutions:
+        case ONE_SOLUTIONS:
 
             fprintf(file, "One root = %lg\n" , root_1);
             break;
-        case Two_solutions:
+        case TWO_SOLUTIONS:
             fprintf(file, "The first root = %lg , second root = %lg\n", root_1, root_2);
             break;
-        case Infinity:
+        case INFINIT:
             fprintf(file,"infinite number of solutions\n");
             break;
         default:

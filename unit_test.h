@@ -10,24 +10,28 @@ struct Coeffs
     double array_inp[3];
 };
 
-struct Roots {
+struct Roots
+{
     double ref_root_1;
     double ref_root_2;
 };
 
-struct Test_data_ref{
-    struct Coeffs coeffs;
-    struct Roots roots;
+struct Test_data_ref
+{
+    struct Coeffs  coeffs;
+    struct Roots   roots;
+
     enum solutions n_roots;
 };
 
 
 
 
-void Test(const Test_data_ref* all_data, int i, FILE* file);
+void SingleTest      (const Test_data_ref* all_data, int i, FILE* file);
 
-void Tests();
+void RunningAllTests ();
 
-int Solve_equations(double* array_input,
-                     double *root_1, double *root_2, int *n_roots);
+int  SolveEquations  (double* array_input,
+                      double *root_1, double *root_2, int *n_roots);
+
 #endif // UNIT_TEST_H_INCLUDED
