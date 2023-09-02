@@ -15,7 +15,7 @@ enum solutions
     TWO_SOLUTIONS,
     INFINIT = -1
 };
-// код стайл
+
 int    SolveEquations        (double* array_input,
                               double *root_1, double *root_2, int *n_roots);
 

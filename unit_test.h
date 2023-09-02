@@ -16,7 +16,7 @@ struct Roots
     double ref_root_2;
 };
 
-struct Test_data_ref
+struct TestDataRef
 {
     struct Coeffs  coeffs;
     struct Roots   roots;
@@ -27,7 +27,7 @@ struct Test_data_ref
 
 
 
-void SingleTest      (const Test_data_ref* all_data, int i, FILE* file);
+void SingleTest      (const TestDataRef* all_data, int i, FILE* file);
 
 void RunningAllTests ();
 

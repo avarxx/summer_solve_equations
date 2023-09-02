@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdbool.h>
 
+#include "input_output.h"
 #include "Solution_of_the_equation.h"
 
 /// @brief the function of solving the quadratic equation
@@ -14,15 +15,18 @@ int SolveEquations(double* array_input,
                      double *root_1, double *root_2, int *n_roots)
 {
     double a = array_input[0];
+
     if (array_input == NULL)
     {
         return -EINVAL;
     }
+
     if ((IsEqual(a, 0)) == EQUAL)
     {
         SolveLinearEquations(array_input, root_1, n_roots);
         return 1;
     }
+
     else
     {
         SolveSquareEquations(array_input, root_1, root_2, n_roots);
@@ -35,10 +39,12 @@ int SolveEquations(double* array_input,
 /// @param root_1 roots
 /// @param n_roots number of roots
 ///\code
+
 void SolveLinearEquations(double* array_input, double *root_1, int *n_roots)
 {
     double b = array_input[1];
     double c = array_input[2];
+
     if ((IsEqual(b, 0) == EQUAL))
     {
         if ((IsEqual(c, 0)) == EQUAL)
@@ -46,12 +52,14 @@ void SolveLinearEquations(double* array_input, double *root_1, int *n_roots)
             *n_roots = -1;
             return;
         }
+
         else
         {
             *n_roots = 0;
             return;
         }
     }
+
     else
     {
         *root_1 = (-c / b);
@@ -59,6 +67,7 @@ void SolveLinearEquations(double* array_input, double *root_1, int *n_roots)
         return;
     }
 }
+
 ///\endcode
 /// @brief solving the quadratic equation
 /// @param array_input array of coefficients
@@ -66,6 +75,7 @@ void SolveLinearEquations(double* array_input, double *root_1, int *n_roots)
 /// @param root_2 the second root
 /// @param n_roots number of roots
 ///\code
+
 void SolveSquarEquations(double* array_input, double *root_1, double *root_2, int *n_roots)
 {
     double a = array_input[0];
@@ -73,6 +83,7 @@ void SolveSquarEquations(double* array_input, double *root_1, double *root_2, in
     double c = array_input[2];
 
     double discriminant = (((b * b) - (4 * a * c)));
+
     if (ComparisonDoubles(discriminant, 0) > 0 )
     {
         *root_1  = ((-b + sqrt(discriminant))/(2 * a));
@@ -80,12 +91,14 @@ void SolveSquarEquations(double* array_input, double *root_1, double *root_2, in
         *n_roots = 2;
         return;
     }
+
     if (IsEqual(discriminant, 0) == EQUAL)
     {
         *root_1  = ((-b)/(2 * a));
         *n_roots = 1;
         return;
     }
+
     if (ComparisonDoubles(discriminant, 0) < 0)
     {
         *n_roots = 0;
@@ -99,6 +112,7 @@ void SolveSquarEquations(double* array_input, double *root_1, double *root_2, in
 /// @param second
 /// @return returns true or false
 ///\code
+
 const double eps = 0.00001;
 
 double ComparisonDoubles(double first, double second)
@@ -108,11 +122,13 @@ double ComparisonDoubles(double first, double second)
         double dif_of_num = (first - second);
         return dif_of_num;
     }
+
     if ((second - first) < eps)
     {
         double dif_of_num = (second - first);
         return dif_of_num;
     }
+
     return 0;
 }
 ///\endcode
@@ -121,14 +137,18 @@ double ComparisonDoubles(double first, double second)
 /// @param second
 /// @return
 ///\code
+
 int IsEqual(double first, double second)
 {
     if (first - second > eps)
         return NO_EQUAL;
+
     if (second - first > eps)
         return NO_EQUAL;
+
     else
         return EQUAL;
 }
+
 ///\code
 

@@ -10,7 +10,7 @@
 ///клж стайл
 
 /// @brief an array of structures in which data for tests is stored
-const struct TestDataRef all_data[n_test]  =
+struct TestDataRef all_data[n_test]  =
                 {
                     {{0,  0,  0},     0,     0,        INFINIT},
                     {{1,  0, -4},     2,    -2,        TWO_SOLUTIONS},
@@ -32,18 +32,19 @@ const struct TestDataRef all_data[n_test]  =
 /// @param i counter
 /// @param file test_solutions.txt the file in which the test results are recorded
 ///\code
-void SingleTest(const Test_data_ref* all_data, int i, FILE* file)
+void SingleTest(TestDataRef* all_data, int i, FILE* file)
 {
     assert(all_data);
-    assert(file);
+    assert(file != NULL);
 
     double x1 = NAN, x2 = NAN;
     int nRoots = 0;
 
     SolveEquations(all_data->coeffs.array_inp,  &x1, &x2, &nRoots);
-    if (IsEqual(x1, all_data->roots.ref_root_1) ||
-        IsEqual(x2, all_data->roots.ref_root_2) ||
-        nRoots != all_data->n_roots)
+    if  (nRoots != all_data->n_roots ||
+        (IsEqual(x1, all_data->roots.ref_root_1) == NO_EQUAL) ||
+        (IsEqual(x2, all_data->roots.ref_root_2) == NO_EQUAL))
+
     {
         fprintf(file, "FALLED: ");
         fprintf(file, "%lg %lg %d", x1, x2, nRoots);
